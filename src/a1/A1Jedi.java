@@ -43,7 +43,7 @@ public class A1Jedi {
 		scan.close();
 	}
 	
-	public static void amount(int cCounter[], int amount, String produce, String list[], int total[]) {
+	public static void amount(int cCounter[], int amount, String produce, String list[], int total[]) { 
 		for(int i = 0; i < list.length; i++) {
 			if(produce.equals(list[i])) {
 				total[i] += amount;

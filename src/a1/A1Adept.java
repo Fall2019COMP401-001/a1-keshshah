@@ -76,7 +76,7 @@ public class A1Adept {
 	 * @param String product name, String[] array of produce, double[] array of prices
 	 * @return price as a double
 	 */
-	public static double getPrice(String item, String list[], double prices[]){
+	public static double getPrice(String item, String list[], double prices[]){ 
 		int i = 0;
 		for(i = 0; i < prices.length; i++) {
 			if(item.equals(list[i]))
