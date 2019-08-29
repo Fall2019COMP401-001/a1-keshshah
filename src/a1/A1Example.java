@@ -3,7 +3,7 @@ package a1;
 import java.util.Scanner;
 
 public class A1Example {
-
+ 
 	public static void main(String[] args) { 
 		// Print out the Java version number, just to let 
 		// you know what Eclipse thinks it is using and

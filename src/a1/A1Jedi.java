@@ -23,7 +23,7 @@ public class A1Jedi {
 		int numOfCustomer = scan.nextInt();
 		for(int c = numOfCustomer; c > 0; c--) {
 			scan.next();
-			tay scan.next();
+			scan.next();
 			int numItems = scan.nextInt();
 			for(int j = numItems; j > 0; j--) {
 				int totalAmount = scan.nextInt();
