@@ -42,7 +42,7 @@ public class A1Adept {
 				totalPrice += (totalAmount * price);
 			}
 			
-			if(c == 0) {
+			if(c == numOfCustomer) {
 				minFirstName = firstName;
 				minLastName = lastName;
 				minPrice = totalPrice;
