@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class A1Adept {
 
-	public static void main(String[] args) {   
+	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
 
@@ -54,7 +54,7 @@ public class A1Adept {
 				maxPrice = totalPrice;
 			}
 			
-			if(totalPrice < maxPrice) {
+			if(totalPrice < minPrice) {
 				minFirstName = firstName;
 				minLastName = lastName;
 				minPrice = totalPrice;

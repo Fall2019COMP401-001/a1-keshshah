@@ -21,16 +21,28 @@ public class A1Jedi {
 		}
 		
 		int numOfCustomer = scan.nextInt();
+		boolean sameCust = false;
 		for(int c = numOfCustomer; c > 0; c--) {
 			scan.next();
 			scan.next();
 			int numItems = scan.nextInt();
-			for(int j = numItems; j > 0; j--) {
+			String[] custItems = new String[numItems];
+			for(int j = 0; j < numItems; j++) {
 				int totalAmount = scan.nextInt();
 				String item = scan.next();
-				amount(custCounter, totalAmount, item, listOfItems, counter);
+				
+				if(j == 0) {
+					custItems[j] = item;
+				}
+				else {
+					sameCust = isUnique(item, custItems);
+					custItems[j] = item;
+				}
+					
+				
+				amount(custCounter, totalAmount, item, listOfItems, counter, sameCust);
 			}
-			
+			sameCust = false;
 		}
 		
 		for(int j = 0; j < numOfItems; j++) {
@@ -43,12 +55,23 @@ public class A1Jedi {
 		scan.close();
 	}
 	
-	public static void amount(int cCounter[], int amount, String produce, String list[], int total[]) { 
+	public static void amount(int cCounter[], int amount, String produce, String list[], int total[], boolean same) { 
 		for(int i = 0; i < list.length; i++) {
-			if(produce.equals(list[i])) {
+			if(produce.equals(list[i])) {//used list && 
 				total[i] += amount;
-				cCounter[i]++;
+				if(same == false) {
+					cCounter[i]++;
+				}
 			}
 		}
+	}
+	
+	public static boolean isUnique(String produce, String list[]) {
+		for(int i = 0; i < list.length; i++) {
+			if(produce.equals(list[i])) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
