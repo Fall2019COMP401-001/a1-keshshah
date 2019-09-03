@@ -35,7 +35,7 @@ public class A1Jedi {
 					custItems[j] = item;
 				}
 				else {
-					sameCust = isUnique(item, custItems);
+					sameCust = isUnique(item, custItems);//checks to make sure if it isnt a duplicate customer
 					custItems[j] = item;
 				}
 					
@@ -54,18 +54,31 @@ public class A1Jedi {
 		}
 		scan.close();
 	}
-	
+	/**
+	 * 
+	 * @param cCounter int[] to show if customer has already order that item
+	 * @param amount int how much of the item
+	 * @param produce String name of produce
+	 * @param list String[] list of produce available
+	 * @param total total[] number of produce bought from all customers
+	 * @param same boolean whether it is a unique customer or same customer
+	 */
 	public static void amount(int cCounter[], int amount, String produce, String list[], int total[], boolean same) { 
 		for(int i = 0; i < list.length; i++) {
-			if(produce.equals(list[i])) {//used list && 
+			if(produce.equals(list[i])) {
 				total[i] += amount;
 				if(same == false) {
-					cCounter[i]++;
+					cCounter[i]++;//to say this customer has already order this item
 				}
 			}
 		}
 	}
-	
+	/**
+	 * 
+	 * @param produce String produce name
+	 * @param list String[] list of produce
+	 * @return boolean is it a unique customer or not
+	 */
 	public static boolean isUnique(String produce, String list[]) {
 		for(int i = 0; i < list.length; i++) {
 			if(produce.equals(list[i])) {
